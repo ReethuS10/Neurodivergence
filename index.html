@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Learning Interface</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="glass-header">
+            <div class="logo">
+                <h1>EduAdapt</h1>
+                <p>Personalized Learning Interface</p>
+            </div>
+            <div class="controls">
+                <button id="btn-dyslexia" class="control-btn" aria-pressed="false">
+                    <span class="icon">Aa</span>
+                    Dyslexia Mode
+                </button>
+                <button id="btn-adhd" class="control-btn" aria-pressed="false">
+                    <span class="icon">🎯</span>
+                    ADHD Focus Mode
+                </button>
+                <button id="btn-listen" class="control-btn" aria-pressed="false">
+                    <span class="icon">🔊</span>
+                    <span class="btn-text">Listen to Text</span>
+                </button>
+                <button id="btn-simplify" class="control-btn" aria-pressed="false">
+                    <span class="icon">✨</span>
+                    Simplify Text
+                </button>
+            </div>
+        </header>
+
+        <main class="content-wrapper">
+            <div class="reading-ruler" id="reading-ruler"></div>
+            
+            <article id="learning-content" class="learning-content">
+                <header class="article-header">
+                    <h2 id="topic-title">Photosynthesis</h2>
+                </header>
+                
+                <div class="content-body" id="content-body">
+                    <!-- Complex Content (Default) -->
+                    <div id="content-complex" class="content-view active">
+                        <p class="text-block">Photosynthesis is the biological process through which green plants, algae, and certain bacteria convert light energy into chemical energy. This process occurs primarily in the chloroplasts of plant cells, which contain a pigment called chlorophyll. Chlorophyll absorbs sunlight, particularly in the blue and red wavelengths, and uses that energy to drive a series of chemical reactions.</p>
+                        
+                        <p class="text-block">During photosynthesis, plants take in carbon dioxide from the atmosphere through tiny openings in their leaves called stomata. At the same time, water is absorbed by the roots from the soil and transported to the leaves through specialized vascular tissues. Using energy from sunlight, these substances are transformed into glucose, a simple sugar that plants use as a source of energy and growth.</p>
+                        
+                        <p class="text-block">Oxygen is produced as a by-product of this reaction and is released into the atmosphere. This oxygen is essential for the survival of most living organisms on Earth because it supports cellular respiration. In this way, photosynthesis plays a critical role in maintaining the balance of oxygen and carbon dioxide in the planet’s atmosphere.</p>
+                        
+                        <p class="text-block">In addition to providing oxygen, photosynthesis forms the foundation of most food chains. Plants store the chemical energy they produce, and when animals eat plants, that energy is transferred through the ecosystem. Therefore, photosynthesis not only supports plant life but also sustains nearly all forms of life on Earth.</p>
+                    </div>
+
+                    <!-- Simplified Content -->
+                    <div id="content-simple" class="content-view">
+                        <p class="text-block">Plants use sunlight to make their own food. This process is called <strong>photosynthesis</strong>. It happens mainly in the green leaves of the plant. A green substance called <strong>chlorophyll</strong> acts like a sponge to catch the sunlight.</p>
+                        
+                        <p class="text-block">Plants breathe in carbon dioxide from the air. Their roots drink water from the soil. Using the trapped sunlight, the plant turns the air and water into sugar. The plant uses this sugar as food to grow strong.</p>
+                        
+                        <p class="text-block">While making this food, the plant breathes out <strong>oxygen</strong> into the air. All people and animals need to breathe this oxygen to stay alive.</p>
+                        
+                        <p class="text-block">Because plants make their own food, they are the base of the food chain. When animals eat plants, they get this energy. So, photosynthesis is what keeps almost all life on Earth alive and breathing.</p>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

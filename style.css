@@ -1,0 +1,234 @@
+:root {
+    --bg-color: #f8fafc;
+    --text-color: #334155;
+    --heading-color: #0f172a;
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --line-height: 1.7;
+    --letter-spacing: normal;
+    --word-spacing: normal;
+    --transition-speed: 0.3s;
+    --text-size: 1.125rem;
+}
+
+/* Dyslexia Mode Variables */
+body.dyslexia-mode {
+    --bg-color: #fdf6e3;         /* Warm, low-glare pastel background */
+    --text-color: #1a1a1a;       /* High contrast, but softer than pure black */
+    --heading-color: #000000;
+    --glass-bg: rgba(253, 246, 227, 0.85);
+    --font-heading: 'Comic Sans MS', 'Comic Sans', 'OpenDyslexic', 'Arial', sans-serif;
+    --font-body: 'Comic Sans MS', 'Comic Sans', 'OpenDyslexic', 'Arial', sans-serif;
+    --line-height: 2.2;          /* Increased line height */
+    --letter-spacing: 0.05em;    /* Increased letter spacing */
+    --word-spacing: 0.15em;      /* Increased word spacing */
+    --text-size: 1.25rem;        /* Slightly larger text */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+    word-spacing: var(--word-spacing);
+    font-size: var(--text-size);
+    transition: all var(--transition-speed) ease;
+    min-height: 100vh;
+    background-image: radial-gradient(circle at 100% 0%, #e0e7ff 0%, transparent 40%),
+                      radial-gradient(circle at 0% 100%, #f3e8ff 0%, transparent 40%);
+    background-attachment: fixed;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header & Controls */
+.glass-header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 1rem;
+    z-index: 100;
+    margin-bottom: 3rem;
+}
+
+.logo h1 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.logo p {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.control-btn {
+    background: white;
+    border: 2px solid #e2e8f0;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.control-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+.control-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.control-btn.active .icon {
+    opacity: 1;
+}
+
+.control-btn:active {
+    transform: translateY(0);
+}
+
+/* Content Area */
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.article-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.article-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    font-weight: 700;
+}
+
+.content-body {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+.content-view {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.content-view.active {
+    display: block;
+}
+
+.text-block {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.text-block:last-child {
+    margin-bottom: 0;
+}
+
+/* ADHD Focus Mode */
+body.adhd-mode .text-block {
+    opacity: 0.35;
+    filter: blur(1px);
+    transform: scale(0.98);
+}
+
+body.adhd-mode .text-block:hover {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    position: relative;
+}
+
+body.adhd-mode .content-body {
+    padding: 2rem 1.5rem;
+}
+
+/* Playback highlighting */
+.speech-highlight {
+    background-color: rgba(253, 224, 71, 0.4); /* Yellow tint */
+    border-radius: 4px;
+    border-bottom: 2px solid #facc15;
+    transition: background-color 0.2s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .glass-header {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .controls {
+        justify-content: center;
+    }
+    .content-body {
+        padding: 1.5rem;
+    }
+}
